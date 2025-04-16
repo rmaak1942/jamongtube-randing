@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="refresh" content="5;url=https://naver.com">
+
+  <title>네이버로 이동 중... - jamongtube.org</title>
+
+  <!-- SEO 기본 메타태그 -->
+  <meta name="description" content="네이버로 이동 중입니다. 잠시만 기다려주세요.">
+  <meta name="author" content="자몽튜브">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- 파비콘 -->
+  <link rel="icon" href="jamongtube.org-icon.png" type="image/png">
+
+  <!-- 스타일시트 -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- 에스코어드림체 전체 폰트 (굵기 포함) -->
+  <link href="https://cdn.jsdelivr.net/gh/webfontworld/sCoreDream/sCoreDream.css" rel="stylesheet">
+
+  <!-- 티몬 몬소리 폰트 -->
+  <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/TmonMonsori.woff2.css" rel="stylesheet" />
+
+  <style>
+    .redirect-container {
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      padding: 30px;
+      margin: 50px auto;
+      max-width: 600px;
+    }
+    
+    .countdown {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #ff4d4d;
+      margin: 20px 0;
+    }
+    
+    .loading-bar {
+      width: 100%;
+      height: 10px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+      margin: 20px 0;
+      overflow: hidden;
+    }
+    
+    .loading-progress {
+      height: 100%;
+      width: 0%;
+      background-color: #ff4d4d;
+      border-radius: 5px;
+      transition: width 5s linear;
+    }
+    
+    .manual-redirect {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-bar">
+    <img src="자몽투명.png" alt="자몽튜브 로고" class="top-logo" />
+    <div class="sns-icons">
+      <a href="#"><i class="fab fa-telegram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1 class="title">네이버로 이동 중...</h1>
+
+    <div class="redirect-container">
+      <section class="jamong-description">
+        <h2>잠시만 기다려주세요</h2>
+        <p>네이버 페이지로 자동 이동 중입니다.</p>
+        <p>자동으로 이동하지 않으면 아래 버튼을 클릭해주세요.</p>
+      </section>
+
+      <div class="countdown" id="countdown">5</div>
+      
+      <div class="loading-bar">
+        <div class="loading-progress" id="loading-progress"></div>
+      </div>
+
+      <div class="manual-redirect">
+        <a href="https://naver.com" class="btn">지금 바로 이동하기</a>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        <img src="자몽투명.png" class="footer-logo" alt="자몽로고" />
+        jamongtube.org
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    // 페이지 로드 시 실행
+    document.addEventListener('DOMContentLoaded', function() {
+      const countdownElement = document.getElementById('countdown');
+      const progressElement = document.getElementById('loading-progress');
+      
+      // 로딩 바 애니메이션 시작
+      progressElement.style.width = '100%';
+      
+      // 카운트다운 시작
+      let secondsLeft = 5;
+      const countdownInterval = setInterval(function() {
+        secondsLeft--;
+        countdownElement.textContent = secondsLeft;
+        
+        if (secondsLeft <= 0) {
+          clearInterval(countdownInterval);
+          window.location.href = 'https://naver.com';
+        }
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
